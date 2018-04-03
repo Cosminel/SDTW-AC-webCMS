@@ -1,8 +1,6 @@
-import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import javax.ws.rs.ApplicationPath;
 
-import eu.tuiasi.webcms.dm.entities.User;
-@EnableJpaRepositories
+@ApplicationPath("api")
 public class Application {
 
 }

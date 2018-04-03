@@ -2,12 +2,7 @@ package eu.tuiasi.webcms.dm.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name="user")
 @Table(name="T_USERS",schema="webcms")
@@ -24,6 +19,8 @@ public class User implements Serializable {
 	private String username; 
 	
 	private String password;
+	@OneToOne
+	private UserRole userRole;
 
 	public Long getUserId() {
 		return userId;

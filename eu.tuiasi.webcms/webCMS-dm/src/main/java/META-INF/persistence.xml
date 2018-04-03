@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1"
-	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+			 xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="WebCMS_Unit" transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/WebCMS</jta-data-source>
 		<class>eu.tuiasi.webcms.dm.entities.User</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		
-		
+
+
 		<properties>
 			<!-- <property name="hibernate.archive.autodetection" value="generatedEntities.*class" /> -->
-<!-- 			<property name="jboss.as.jpa.providerModule" value="org.hibernate:5.2.10.Final"/> -->
+			<!-- 			<property name="jboss.as.jpa.providerModule" value="org.hibernate:5.2.10.Final"/> -->
 			<!-- property to control which transaction platform to -->
 			<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
 			<!-- Use Oracle 10g-specific SQL dialect; there is no Oracle 11i-specific one -->
@@ -23,26 +23,26 @@
 			<!-- Add comments for debugging -->
 			<property name="hibernate.use_sql_comments" value="false" />
 			<!-- Generate table structure -->
-			<property name="hibernate.hbm2ddl.auto" value="update"/>
-			<!-- property name="hibernate.hbm2ddl.auto" value="update" / -->
+
+			<property name="hbm2ddl.auto" value="update" />
 			<!-- fetch lazy collections outside of transaction https://hibernate.atlassian.net/browse/HHH-7457 -->
 			<!-- Non necessary with the JBossAppServerJtaPlatform <property name="hibernate.enable_lazy_load_no_trans" value="true" /> -->
 			<property name="hibernate.default_entity_mode" value="pojo" />
-			 <!-- batching size -->
-            <property name="hibernate.jdbc.batch_size" value="200"/>
-            <property name="hibernate.order_inserts" value="true"/>
-            <property name="hibernate.order_updates" value="true"/>
-            <property name="hibernate.jdbc.batch_versioned_data" value="true"/>
-            
-            	<!-- ________________________________________ -->
+			<!-- batching size -->
+			<property name="hibernate.jdbc.batch_size" value="200"/>
+			<property name="hibernate.order_inserts" value="true"/>
+			<property name="hibernate.order_updates" value="true"/>
+			<property name="hibernate.jdbc.batch_versioned_data" value="true"/>
+
+			<!-- ________________________________________ -->
 			<!-- ###### Infinispan hibernate cache ###### -->
 			<!-- ________________________________________ -->
 			<property name="hibernate.cache.infinispan.cachemanager"
-				value="java:jboss/infinispan/container/hibernate" />
+					  value="java:jboss/infinispan/container/hibernate" />
 			<property name="hibernate.transaction.manager_lookup_class"
-				value="org.hibernate.transaction.JBossTransactionManagerLookup" />
+					  value="org.hibernate.transaction.JBossTransactionManagerLookup" />
 			<property name="hibernate.cache.use_second_level_cache"
-				value="true" />
+					  value="true" />
 			<property name="hibernate.cache.use_query_cache" value="true" />
 		</properties>
 	</persistence-unit>
