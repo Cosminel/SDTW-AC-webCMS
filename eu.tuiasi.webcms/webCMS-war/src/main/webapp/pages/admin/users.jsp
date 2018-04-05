@@ -33,10 +33,10 @@
           </div>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="index.html">Dashboard</a></li>
-              <li><a href="pages.html">Pages</a></li>
-              <li><a href="categories.html">Categories</a></li>
-              <li class="active"><a href="users.html">Users</a></li>
+              <li><a href="home.jsp">Dashboard</a></li>
+              <li><a href="pages.jsp">Pages</a></li>
+              <li><a href="categories.jsp">Categories</a></li>
+              <li class="active"><a href="users.jsp">Users</a></li>
             </ul>
             <form class="navbar-form navbar-left">
               <input type="text" class="form-control col-lg-8 search-form" placeholder="Search">
@@ -59,12 +59,12 @@
               <div class = "row">
                   <div class = "col-md-4">
                     <div class="list-group">
-                      <a href="index.html" class="list-group-item">
+                      <a href="home.jsp" class="list-group-item">
                         <i class = "glyphicon glyphicon-dashboard"></i> Dashboard
                       </a>
                       <a href="page.html" class="list-group-item"><i class = "glyphicon glyphicon-file"></i> Pages</a>
                       <a href="categories.html" class="list-group-item"><i class = "glyphicon glyphicon-folder-open"></i> Categories</a>
-                      <a href="users.html" class="list-group-item active"><i class = "glyphicon glyphicon-user"></i> User Accounts</a>
+                      <a href="users.jsp" class="list-group-item active"><i class = "glyphicon glyphicon-user"></i> User Accounts</a>
                     </div> <!-- ENDof ListGroup-->
 
                   </div> <!-- ENDof Col-md-4 -->
@@ -76,7 +76,7 @@
                            </div> <!-- ENDof col-md-6 -->
                            <div class = "col-md-6">
                                 <div class="btn-group actions" role="group" aria-label="...">
-                                  <a href = user.html class="btn btn-default"><i class = "glyphicon glyphicon-plus"></i> New</a>
+                                  <a href = user.jsp class="btn btn-default"><i class = "glyphicon glyphicon-plus"></i> New</a>
                                   <a href = "" class="btn btn-default"><i class = "glyphicon glyphicon-pencil"></i> Edit</a>
                                   <a href = "" class="btn btn-default"><i class = "glyphicon glyphicon-remove"></i> Delete</a>
                                 </div>
@@ -91,74 +91,6 @@
 						
 						
 						<div id="users"> </div>
-                       <!--  <table id = "sort-table" class="table table-striped tablesorter">
-                            <thead>
-                                <tr>
-                                    <th><input type = "checkbox"></th>
-                                    <th><i class="glyphicon glyphicon-chevron-down"></i> Full Name</th>
-                                    <th><i class="glyphicon glyphicon-chevron-down"></i> Email</th>
-                                    <th><i class="glyphicon glyphicon-chevron-down"></i> Group</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td><input type = "checkbox"></td>
-                                    <td><a href = "user.html">John</a></td>
-                                    <td>john@gmail.com</td>
-                                    <td>Admin</td>
-                                </tr>
-
-                                 <tr>
-                                    <td><input type = "checkbox"></td>
-                                    <td><a href = "user.html">Richard</a></td>
-                                    <td>richard@gmail.com</td>
-                                    <td>Admin</td>
-                                </tr>
-
-                                 <tr>
-                                    <td><input type = "checkbox"></td>
-                                    <td><a href = "user.html">Michael</a></td>
-                                    <td>michael@gmail.com</td>
-                                    <td>Admin</td>
-                                </tr>
-
-                                 <tr>
-                                    <td><input type = "checkbox"></td>
-                                    <td><a href = "user.html">Roger</a></td>
-                                    <td>roger@gmail.com</td>
-                                    <td>Admin</td>
-                                </tr>
-
-                                 <tr>
-                                    <td><input type = "checkbox"></td>
-                                    <td><a href = "user.html">Josh</a></td>
-                                    <td>josh@gmail.com</td>
-                                    <td>Registered</td>
-                                </tr>
-                            </tbody>
-                        </table> ENDof Table table-striped
-
-                    Pagination
-                    <nav>
-                      <ul class="pagination">
-                        <li>
-                          <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                          </a>
-                        </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                          <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav> -->
 
                   </div> <!-- ENDof Col-md-8 -->
               </div> <!-- ENDof Row -->
@@ -167,7 +99,7 @@
       </section>
 
       <footer>
-          <p>Copyright 2016, All Rights Reserved</p>
+          <p>Copyright 2018 Cosmin Cazacu, All Rights Reserved</p>
       </footer>
 
     <!-- Bootstrap core JavaScript

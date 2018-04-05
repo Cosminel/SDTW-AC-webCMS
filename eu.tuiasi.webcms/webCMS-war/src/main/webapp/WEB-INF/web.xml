@@ -19,10 +19,13 @@
 		<servlet-class>org.springframework.data.rest.webmvc.RepositoryRestDispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
+
 	<servlet-mapping>
 		<servlet-name>rest</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
+
 
 	<login-config>
 		<auth-method>FORM</auth-method>

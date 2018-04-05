@@ -22,6 +22,18 @@ public class User implements Serializable {
 	@OneToOne
 	private UserRole userRole;
 
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+	private UserData userData;
+
+	public User(){
+
+	}
+
+	public User(String username, String password) {
+		this.username = username;
+		this.password = password;
+	}
+
 	public Long getUserId() {
 		return userId;
 	}
@@ -45,8 +57,20 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
-	
+
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+	public UserData getUserData() {
+		return userData;
+	}
+
+	public void setUserData(UserData userData) {
+		this.userData = userData;
+	}
 }

@@ -10,13 +10,6 @@
 	<packaging>ear</packaging>
 
 	<dependencies>
-		 <!-- <dependency>
-			<groupId>eu.tuiasi.webcms</groupId>
-			<artifactId>webCMS-dm</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>jar</type>
-		</dependency> 
- -->
 		<dependency>
 			<groupId>eu.tuiasi.webcms</groupId>
 			<artifactId>webCMS-web</artifactId>
@@ -24,6 +17,13 @@
 			<type>war</type>
 		</dependency>
 
+
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+            <scope>provided</scope>
+        </dependency>
 	</dependencies>
 
 	<build>

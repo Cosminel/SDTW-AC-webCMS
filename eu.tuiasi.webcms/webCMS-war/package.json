@@ -2,13 +2,12 @@
   "name": "webcms-war",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "rest": "^1.3.2",
-    "webpack": "^1.12.9",
-    "whatwg-fetch": "^2.0.4"
+    "webpack": "^1.12.2"
   },
   "scripts": {
     "build": "webpack -p",

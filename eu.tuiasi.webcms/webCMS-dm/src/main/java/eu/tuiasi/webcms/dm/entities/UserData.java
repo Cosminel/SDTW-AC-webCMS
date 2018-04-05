@@ -10,7 +10,6 @@ public class UserData implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String address;
     private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
@@ -19,20 +18,16 @@ public class UserData implements Serializable {
     private String firstname;
     private String lastname;
 
+    @OneToOne(cascade = {CascadeType.ALL},fetch=FetchType.EAGER)
+    @PrimaryKeyJoinColumn
+    private User user;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getAvatar() {
@@ -82,4 +77,13 @@ public class UserData implements Serializable {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }

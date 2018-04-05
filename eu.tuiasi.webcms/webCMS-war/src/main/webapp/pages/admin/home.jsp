@@ -163,7 +163,7 @@
       </section>
 
       <footer>
-          <p>Copyright 2016, All Rights Reserved</p>
+          <p>Copyright 2018 Cosmin Cazacu, All Rights Reserved</p>
       </footer>
 
     <!-- Bootstrap core JavaScript

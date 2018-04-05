@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 import client from '../../client';
+import layout from './layout';
 
 
 
@@ -10,8 +11,11 @@ class User extends React.Component{
 
           return (
             <tr>
-                <td>{this.props.user.username}</td>
-                <td>{this.props.user.password}</td>
+                <td>{this.props.user.firstname}</td>
+                <td>{this.props.user.lastname}</td>
+                <td>{this.props.user.email}</td>
+                <td>{this.props.user.dob}</td>
+                <td>{this.props.user.createdAt}</td>
          
                 <td>
                   <button className="btn btn-info" onClick={this.handleDelete}>Delete</button>
@@ -27,15 +31,18 @@ class UserTable extends React.Component{
       var rows = [];
       this.props.users.forEach(function(user) {
         rows.push(
-          <User user={user} key={user.id} />);
+          <User user={user} key={user.email} />);
       });
     
     return (
       <table className="table table-striped">
           <thead>
               <tr>
-                  <th>username</th>
-                  <th>password</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+                  <th>Date of birth</th>
+                  <th>CreatedAt</th>
               </tr>
           </thead>
           <tbody>{rows}</tbody>
@@ -51,22 +58,18 @@ class Admin extends React.Component{
         this.state = {users:[]};
     }
     componentDidMount(){
-        client({method: 'GET', path: 'http://localhost:8080/webCMS-web/api/users'}).done(response => {
-            this.setState({users:response.entity._embedded.users});
+        client({method: 'GET', path: 'http://localhost:8180/webCMS/api/userDatas'}).done(response => {
+            this.setState({users:response.entity._embedded.userDatas});
         });
         
-      /*   var self = this;
-        $.ajax({
-            url: "http://localhost:8080/webCMS-web/api/users",
-            type: "GET"
-          }).then(function(data) {
-            self.setState({ users: data._embedded.users});
-          });*/
-      
     }
     render() {
-        console.log(this.state.users);
-      return ( <UserTable users={this.state.users} /> );
+
+      return (
+          <layout>
+          <UserTable users={this.state.users} />
+          </layout>
+      );
     }
   }
 

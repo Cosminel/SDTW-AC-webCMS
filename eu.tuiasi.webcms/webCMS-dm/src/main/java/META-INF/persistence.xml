@@ -6,6 +6,9 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/WebCMS</jta-data-source>
 		<class>eu.tuiasi.webcms.dm.entities.User</class>
+		<class>eu.tuiasi.webcms.dm.entities.UserData</class>
+		<class>eu.tuiasi.webcms.dm.entities.UserRole</class>
+
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 
 
@@ -24,7 +27,7 @@
 			<property name="hibernate.use_sql_comments" value="false" />
 			<!-- Generate table structure -->
 
-			<property name="hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<!-- fetch lazy collections outside of transaction https://hibernate.atlassian.net/browse/HHH-7457 -->
 			<!-- Non necessary with the JBossAppServerJtaPlatform <property name="hibernate.enable_lazy_load_no_trans" value="true" /> -->
 			<property name="hibernate.default_entity_mode" value="pojo" />
