@@ -1,5 +1,7 @@
 package eu.tuiasi.webcms.dm.entities;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -8,7 +10,8 @@ import java.util.Date;
 @Table(name = "T_USER_DATA", schema = "webcms")
 public class UserData implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "USER_DATA_SEQ", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name="USER_DATA_SEQ", sequenceName = "USER_DATA_SEQ", allocationSize = 1)
     private Long id;
     private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
@@ -18,8 +21,8 @@ public class UserData implements Serializable {
     private String firstname;
     private String lastname;
 
-    @OneToOne(cascade = {CascadeType.ALL},fetch=FetchType.EAGER)
-    @PrimaryKeyJoinColumn
+    @OneToOne(optional = false)
+    @RestResource(path="userCredentials",rel="users")
     private User user;
 
     public Long getId() {

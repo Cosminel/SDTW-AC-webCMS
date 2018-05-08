@@ -1,15 +1,28 @@
 package eu.tuiasi.webmcms.bl.dto;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import eu.tuiasi.webcms.dm.enums.AppRoles;
+import eu.tuiasi.webcms.dm.serializers.LaunchDateSerializer;
+
 import java.io.Serializable;
 import java.util.Date;
-@XmlRootElement
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDataDTO implements Serializable {
 
+    @JsonProperty
     private String lastName;
+    @JsonProperty
     private String firstName;
+    @JsonProperty
     private Date dob;
+    @JsonProperty
     private String email;
+    @JsonProperty
+    private AppRoles userRole;
+
 
     public UserDataDTO() {
     }
@@ -19,6 +32,14 @@ public class UserDataDTO implements Serializable {
         this.firstName = firstName;
         this.dob = dob;
         this.email = email;
+    }
+
+    public UserDataDTO(String lastName, String firstName, Date dob, String email, AppRoles userRole) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.dob = dob;
+        this.email = email;
+        this.userRole = userRole;
     }
 
     public String getLastName() {
@@ -37,6 +58,7 @@ public class UserDataDTO implements Serializable {
         this.firstName = firstName;
     }
 
+    @JsonSerialize(using = LaunchDateSerializer.class)
     public Date getDob() {
         return dob;
     }
@@ -51,6 +73,14 @@ public class UserDataDTO implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public AppRoles getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(AppRoles userRole) {
+        this.userRole = userRole;
     }
 
     @Override

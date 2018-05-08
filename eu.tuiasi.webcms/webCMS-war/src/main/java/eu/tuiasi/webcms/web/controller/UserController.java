@@ -1,17 +1,27 @@
 package eu.tuiasi.webcms.web.controller;
 
+import eu.tuiasi.restclient.UserDatabaseRestClient;
+import eu.tuiasi.transformer.UserDataDTOToEntity;
+import eu.tuiasi.webcms.dm.entities.UserData;
 import eu.tuiasi.webmcms.bl.dto.UserDataDTO;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/user-manangement/users")
+@RestController
+@RequestMapping("/user-management")
 public class UserController {
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public String addUser(UserDataDTO userDataDTO){
-        return "salut";
+    @Autowired
+    public UserDatabaseRestClient userDatabaseRestClient;
+
+    UserDataDTO dto = new UserDataDTO();
+    @RequestMapping(value = "/add",method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public ResponseEntity<UserData> addUser(@RequestBody  UserDataDTO userDataDTO){
+        System.out.println("UserController.addUser");
+        ResponseEntity re =  userDatabaseRestClient.create(UserDataDTOToEntity.transform(userDataDTO));
+        return re;
     }
 
 }

@@ -1,10 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: C312081
-  Date: 04.04.2018
-  Time: 09:57
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="eu.tuiasi.webcms.dm.enums.AppRoles" %>
+<%@ page import="java.util.Arrays" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">AlphaCMS</a>
+            <a class="navbar-brand" href="index.html">webCMS</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,12 +69,12 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="list-group">
-                    <a href="index.html" class="list-group-item">
+                    <a href="home.jsp" class="list-group-item">
                         <i class="glyphicon glyphicon-dashboard"></i> Dashboard
                     </a>
-                    <a href="pages.html" class="list-group-item"><i class="glyphicon glyphicon-file"></i> Pages</a>
-                    <a href="categories.html" class="list-group-item"><i class="glyphicon glyphicon-folder-open"></i> Categories</a>
-                    <a href="users.html" class="list-group-item active"><i class="glyphicon glyphicon-user"></i> User Accounts</a>
+                    <a href="pages.jsp" class="list-group-item"><i class="glyphicon glyphicon-file"></i> Pages</a>
+                    <a href="categories.jsp" class="list-group-item"><i class="glyphicon glyphicon-folder-open"></i> Categories</a>
+                    <a href="users.jsp" class="list-group-item active"><i class="glyphicon glyphicon-user"></i> User Accounts</a>
 
                 </div>
             </div>
@@ -96,11 +92,11 @@
                     </div>
                 </div>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Dashboard</a></li>
-                    <li><a href="pages.html">Users</a></li>
+                    <li><a href="home.jsp">Dashboard</a></li>
+                    <li><a href="pages.jsp">Users</a></li>
                     <li class="active">User</li>
                 </ol>
-                <form action ="${pageContext.request.contextPath}/user-manangement/users" method="post">
+                <form action ="${pageContext.request.contextPath}/usersServlet" method="post">
                     <div class="form-group">
                         <label>FirstName</label>
                         <input type="text" name="firstname" class="form-control" placeholder="Enter FirstName">
@@ -116,6 +112,19 @@
                     <div class="form-group">
                         <label>Date of birth</label>
                         <input type="date" name="dob" class="form-control" placeholder="Enter DOB"></input>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roles"> Role: </label>
+                        <select name="roles" class="form-control" id="roles" multiple="multiple">
+                            <%
+                                for(AppRoles role : Arrays.asList(AppRoles.values())) {
+                            %>
+                            <option value="<%=role%> "><%=role%></option>
+                            <%
+                                }
+                            %>
+                        </select>
                     </div>
 
                     <button type="submit" class="btn btn-default">Submit</button>

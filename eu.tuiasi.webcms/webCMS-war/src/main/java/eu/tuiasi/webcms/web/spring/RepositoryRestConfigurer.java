@@ -1,4 +1,4 @@
-package eu.tuiasi.webcms.web.config;
+package eu.tuiasi.webcms.web.spring;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
 import org.springframework.stereotype.Component;

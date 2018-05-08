@@ -1,6 +1,14 @@
+/*
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
 import javax.ws.rs.ApplicationPath;
 
-@ApplicationPath("api")
-public class Application {
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "eu.tuiasi.webcms.web.controller")
+public class Application{
 
 }
+*/

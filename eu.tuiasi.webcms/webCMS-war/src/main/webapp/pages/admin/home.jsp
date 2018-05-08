@@ -36,7 +36,7 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="index.html">Dashboard</a></li>
               <li><a href="pages.jsp">Pages</a></li>
-              <li><a href="categories.html">Posts</a></li>
+              <li><a href="categories.jsp">Posts</a></li>
               <li><a href="users.jsp">Users</a></li>
             </ul>
             <form class="navbar-form navbar-left">
@@ -64,7 +64,7 @@
                         <i class = "glyphicon glyphicon-dashboard"></i> Dashboard
                       </a>
                       <a href="pages.jsp" class="list-group-item"><i class = "glyphicon glyphicon-file"></i> Pages</a>
-                      <a href="categories.html" class="list-group-item"><i class = "glyphicon glyphicon-folder-open"></i> Categories</a>
+                      <a href="categories.jsp" class="list-group-item"><i class = "glyphicon glyphicon-folder-open"></i> Categories</a>
                       <a href="users.jsp" class="list-group-item"><i class = "glyphicon glyphicon-user"></i> User Accounts</a>
                     </div> <!-- ENDof ListGroup-->
 

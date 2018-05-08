@@ -10,11 +10,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <!-- Thymeleaf 3 -->
-        <org.thymeleaf-version>3.0.9.RELEASE</org.thymeleaf-version>
-        <org.thymeleaf.extras.springsecurity4-version>3.0.2.RELEASE</org.thymeleaf.extras.springsecurity4-version>
-        <nz.net.ultraq.thymeleaflayout-version>2.2.1</nz.net.ultraq.thymeleaflayout-version>
-        <thymeleaf-extras-java8time-version>3.0.0.RELEASE</thymeleaf-extras-java8time-version>
+        <jackson.version>2.4.0</jackson.version>
+        <jaxb-api.version>2.2.11</jaxb-api.version>
     </properties>
 
 
@@ -48,6 +45,29 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
+
+
+
+        <!--
+     <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-webmvc</artifactId>
+     </dependency>-->
 
     </dependencies>
 

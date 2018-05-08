@@ -30,6 +30,10 @@
         <version.surefire.plugin>2.16</version.surefire.plugin>
         <version.war.plugin>2.5</version.war.plugin>
 
+        <org.spring-framework.version>4.1.4.RELEASE</org.spring-framework.version>
+        <com.jackson.version>2.9.4</com.jackson.version>
+        <jackson.version>1.9.13</jackson.version>
+
         <!-- maven-compiler-plugin -->
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -51,6 +55,52 @@
                 <version>${version.javaee}</version>
                 <scope>provided</scope>
             </dependency>
+
+
+            <!-- JSON -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${com.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${com.jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${com.jackson.version}</version>
+            </dependency>
+<!--
+
+            &lt;!&ndash; SPRING &ndash;&gt;
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${org.spring-framework.version}</version>
+                <exclusions>
+                    &lt;!&ndash; Exclude Commons Logging in favor of SLF4j &ndash;&gt;
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${org.spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${org.spring-framework.version}</version>
+            </dependency>
+-->
+
+
         </dependencies>
     </dependencyManagement>
     <build>
